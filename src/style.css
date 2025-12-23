@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-paixao-green text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-0.5;
+  }
+  
+  .glass-card {
+    @apply bg-white border border-gray-100 shadow-md rounded-2xl transition-all duration-300 hover:shadow-xl hover:border-paixao-green/30;
+  }
+
+  .nav-link {
+    @apply text-paixao-dark hover:text-paixao-green font-medium transition-colors duration-200 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-[-4px] left-0 w-0 h-0.5 bg-paixao-green transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

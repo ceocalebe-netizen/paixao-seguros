@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paixão Seguros - Segurança Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paixao-green': '#28a745',
+                        'paixao-dark': '#1a1a1a',
+                        'paixao-light': '#ffffff',
+                        'paixao-surface': '#f9fafb',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+        .btn-primary {
+          @apply px-6 py-3 bg-paixao-green text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-0.5 inline-block;
+        }
+        
+        .glass-card {
+          @apply bg-white border border-gray-100 shadow-md rounded-2xl transition-all duration-300 hover:shadow-xl hover:border-paixao-green/30;
+        }
+
+        .nav-link {
+          @apply text-paixao-dark hover:text-paixao-green font-medium transition-colors duration-200 relative;
+        }
+
+        .nav-link::after {
+          content: '';
+          @apply absolute bottom-[-4px] left-0 w-0 h-0.5 bg-paixao-green transition-all duration-300;
+        }
+
+        .nav-link:hover::after {
+          @apply w-full;
+        }
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body class="font-sans text-paixao-dark bg-white antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-8 h-8 bg-paixao-green rounded-lg flex items-center justify-center text-white">
+                        <i class="ph ph-shield-check text-xl"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight">Paixão<span
+                            class="text-paixao-green">Seguros</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="nav-link">Início</a>
+                    <a href="#servicos" class="nav-link">Seguros</a>
+                    <a href="#diferenciais" class="nav-link">Sobre</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex">
+                    <a href="#contato" class="btn-primary">
+                        Cotação Rápida
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-paixao-dark hover:text-paixao-green focus:outline-none">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Text Content -->
+                <div data-aos="fade-up">
+                    <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                        Segurança para você e seus bens com a <span class="text-paixao-green">inteligência</span> que
+                        você merece.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        Proteção completa com atendimento 24h e tecnologia de ponta para garantir sua tranquilidade e a
+                        de sua família.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contato" class="btn-primary text-center">
+                            Solicitar Consultoria
+                        </a>
+                        <a href="#servicos"
+                            class="px-6 py-3 border border-gray-300 rounded-lg text-paixao-dark font-medium hover:border-paixao-green hover:text-paixao-green transition-all duration-300 text-center flex items-center justify-center gap-2">
+                            Conhecer Planos <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators (Mini) -->
+                    <div class="mt-12 flex items-center gap-6 text-sm text-gray-500">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-fill ph-check-circle text-paixao-green text-lg"></i>
+                            <span>Atendimento 24h</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-fill ph-check-circle text-paixao-green text-lg"></i>
+                            <span>Agilidade no Sinistro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Content (Abstract/3D) -->
+                <div class="relative hidden lg:block" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Placeholder for abstract illustration -->
+                    <div class="relative w-full aspect-square max-w-lg mx-auto">
+                        <div class="absolute inset-0 bg-green-50 rounded-full filter blur-3xl opacity-50 animate-pulse">
+                        </div>
+                        <!-- Composition of Cards/Icons to simulate 3D -->
+                        <div
+                            class="absolute top-10 left-10 w-48 p-4 bg-white rounded-2xl shadow-xl z-20 transform -rotate-6 border border-gray-100">
+                            <div
+                                class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-2">
+                                <i class="ph-duotone ph-house-line text-2xl"></i>
+                            </div>
+                            <p class="font-bold text-gray-900">Residencial</p>
+                            <p class="text-xs text-gray-500">Proteção total</p>
+                        </div>
+
+                        <div
+                            class="absolute bottom-20 right-10 w-52 p-4 bg-white rounded-2xl shadow-xl z-10 transform rotate-3 border border-gray-100">
+                            <div
+                                class="w-10 h-10 bg-paixao-green/10 rounded-lg flex items-center justify-center text-paixao-green mb-2">
+                                <i class="ph-duotone ph-car text-2xl"></i>
+                            </div>
+                            <p class="font-bold text-gray-900">Automóvel</p>
+                            <p class="text-xs text-gray-500">Assistência 24h</p>
+                        </div>
+
+                        <div
+                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-tr from-paixao-green to-emerald-300 rounded-full opacity-10 blur-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-semibold text-paixao-green tracking-wide uppercase mb-2">Nossos Serviços</h2>
+                <h3 class="text-3xl font-bold text-paixao-dark">Proteção sob medida para cada necessidade</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Auto -->
+                <div class="glass-card p-8 group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-paixao-green mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-duotone ph-car text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Seguro Auto</h4>
+                    <p class="text-gray-600 text-sm mb-4">Proteção completa para seu veículo contra roubo, furto e
+                        acidentes.</p>
+                    <span
+                        class="text-paixao-green font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Saiba mais <i class="ph-bold ph-arrow-right"></i>
+                    </span>
+                </div>
+
+                <!-- Card 2: Residencial -->
+                <div class="glass-card p-8 group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-paixao-green mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-duotone ph-house-line text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Residencial</h4>
+                    <p class="text-gray-600 text-sm mb-4">Mantenha seu lar protegido contra imprevistos, incêndios e
+                        danos elétricos.</p>
+                    <span
+                        class="text-paixao-green font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Saiba mais <i class="ph-bold ph-arrow-right"></i>
+                    </span>
+                </div>
+
+                <!-- Card 3: Vida -->
+                <div class="glass-card p-8 group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-paixao-green mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-duotone ph-heartbeat text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Seguro de Vida</h4>
+                    <p class="text-gray-600 text-sm mb-4">Garanta o futuro e a tranquilidade de quem você mais ama.</p>
+                    <span
+                        class="text-paixao-green font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Saiba mais <i class="ph-bold ph-arrow-right"></i>
+                    </span>
+                </div>
+
+                <!-- Card 4: Empresarial -->
+                <div class="glass-card p-8 group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-paixao-green mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-duotone ph-briefcase text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Empresarial</h4>
+                    <p class="text-gray-600 text-sm mb-4">Soluções personalizadas para proteger o patrimônio do seu
+                        negócio.</p>
+                    <span
+                        class="text-paixao-green font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Saiba mais <i class="ph-bold ph-arrow-right"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiators Section -->
+    <section id="diferenciais" class="py-20 relative overflow-hidden">
+        <!-- Background Abstract -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gray-50 -z-10 skew-x-12 transform origin-top-right"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="bg-paixao-green text-white p-6 rounded-2xl rounded-br-[4rem] h-48 flex flex-col justify-end">
+                            <i class="ph-fill ph-clock-counter-clockwise text-4xl mb-4"></i>
+                            <p class="font-bold text-lg">Atendimento 24h</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-2xl h-48 flex flex-col justify-end">
+                            <i class="ph-fill ph-lightning text-4xl mb-4 text-paixao-dark"></i>
+                            <p class="font-bold text-lg text-paixao-dark">Sinistro Ágil</p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-2xl rounded-tl-[4rem] h-48 flex flex-col justify-end">
+                            <i class="ph-fill ph-shield-check text-4xl mb-4 text-paixao-dark"></i>
+                            <p class="font-bold text-lg text-paixao-dark">Confiabilidade</p>
+                        </div>
+                        <div class="bg-paixao-dark text-white p-6 rounded-2xl h-48 flex flex-col justify-end">
+                            <i class="ph-fill ph-users text-4xl mb-4"></i>
+                            <p class="font-bold text-lg">Especialistas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-paixao-dark">Por que escolher a Paixão Seguros?
+                    </h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Não vendemos apenas seguros, entregamos tranquilidade. Nossa equipe utiliza tecnologia para
+                        desburocratizar processos, garantindo que você tenha o suporte necessário no momento exato.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-paixao-green text-xl mt-1"></i>
+                            <p class="text-gray-700">Cobertura completa personalizada para o seu perfil.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-paixao-green text-xl mt-1"></i>
+                            <p class="text-gray-700">Equipe de suporte dedicada e pronta para ajudar.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-check-circle text-paixao-green text-xl mt-1"></i>
+                            <p class="text-gray-700">Parceria com as maiores seguradoras do mercado.</p>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#contato" class="btn-primary">Fale com um consultor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Partners -->
+    <section class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm mb-8 font-medium">PARCEIROS CONFIÁVEIS</p>
+            <div
+                class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Placeholder Logos -->
+                <div class="text-2xl font-bold font-serif text-gray-400">Seguradora A</div>
+                <div class="text-2xl font-bold font-mono text-gray-400">Protege+</div>
+                <div class="text-2xl font-bold font-sans text-gray-400">SafeLife</div>
+                <div class="text-2xl font-bold text-gray-400 italic">AutoGuard</div>
+                <div class="text-2xl font-bold text-gray-400">TrustInsure</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8" id="contato">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-paixao-green rounded-lg flex items-center justify-center text-white">
+                            <i class="ph ph-shield-check text-xl"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight">Paixão<span
+                                class="text-paixao-green">Seguros</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-sm">
+                        Segurança para você e seus bens. Tecnologia e atendimento humanizado para garantir o seu futuro.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-paixao-green transition-colors">
+                            <i class="ph-fill ph-instagram-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-paixao-green transition-colors">
+                            <i class="ph-fill ph-facebook-logo text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-paixao-green transition-colors">
+                            <i class="ph-fill ph-linkedin-logo text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Links Rápidos</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Seguros</a></li>
+                        <li><a href="#diferenciais" class="hover:text-white transition-colors">Sobre Nós</a></li>
+                        <li><a href="#contato" class="hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contato</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-whatsapp-logo text-paixao-green"></i>
+                            <span>(11) 99999-9999</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-envelope-simple text-paixao-green"></i>
+                            <span>contato@paixaoseguros.com.br</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-map-pin text-paixao-green"></i>
+                            <span>Av. Paulista, 1000 - SP</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2024 Paixão Seguros. Todos os direitos reservados.</p>
+                <p>Desenvolvido com tecnologia de ponta.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511999999999" target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-transform hover:scale-110 animate-bounce cursor-pointer"
+        title="Fale conosco no WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+    </a>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50,
+        });
+    </script>
+</body>
+
+</html>
