@@ -37,7 +37,40 @@
         }
         
         .glass-card {
-          @apply bg-white border border-gray-100 shadow-md rounded-2xl transition-all duration-300 hover:shadow-xl hover:border-paixao-green/30;
+          @apply bg-white/80 backdrop-blur-lg border border-white/40 shadow-xl rounded-2xl transition-all duration-300;
+        }
+
+        .input-field {
+          @apply w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-paixao-green/50 focus:border-paixao-green transition-all duration-300;
+        }
+
+        .floating {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-delayed {
+          animation: float 6s ease-in-out 3s infinite;
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+          100% { transform: translateY(0px); }
+        }
+        
+        /* Form transition styles */
+        .step-transition {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .step-hidden {
+            display: none;
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        .step-active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .nav-link {
@@ -102,74 +135,274 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gray-50">
+        <!-- Animated Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <div
+                class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-green-100 rounded-full blur-[100px] opacity-60 animate-pulse">
+            </div>
+            <div
+                class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[60%] bg-green-50 rounded-full blur-[100px] opacity-60">
+            </div>
+            <div class="absolute top-[20%] right-[10%] w-24 h-24 bg-paixao-green/10 rounded-full blur-xl floating">
+            </div>
+        </div>
 
-                <!-- Text Content -->
-                <div data-aos="fade-up">
-                    <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-                        Segurança para você e seus bens com a <span class="text-paixao-green">inteligência</span> que
-                        você merece.
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
-                        Proteção completa com atendimento 24h e tecnologia de ponta para garantir sua tranquilidade e a
-                        de sua família.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contato" class="btn-primary text-center">
-                            Solicitar Consultoria
-                        </a>
-                        <a href="#servicos"
-                            class="px-6 py-3 border border-gray-300 rounded-lg text-paixao-dark font-medium hover:border-paixao-green hover:text-paixao-green transition-all duration-300 text-center flex items-center justify-center gap-2">
-                            Conhecer Planos <i class="ph ph-arrow-right"></i>
-                        </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Left Column: Content -->
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-sm font-medium text-paixao-green mb-6 shadow-sm"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <span class="w-2 h-2 rounded-full bg-paixao-green animate-ping"></span>
+                        Inovação em Seguros
                     </div>
 
-                    <!-- Trust Indicators (Mini) -->
-                    <div class="mt-12 flex items-center gap-6 text-sm text-gray-500">
-                        <div class="flex items-center gap-2">
-                            <i class="ph-fill ph-check-circle text-paixao-green text-lg"></i>
-                            <span>Atendimento 24h</span>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900 tracking-tight">
+                        O futuro da sua <br />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-paixao-green to-green-700">segurança</span>
+                        começa aqui.
+                    </h1>
+
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed" data-aos="fade-up"
+                        data-aos-delay="200">
+                        Cote seu seguro em segundos com nossa tecnologia de ponta. Proteção personalizada, atendimento
+                        24h e burocracia zero.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mb-10" data-aos="fade-up" data-aos-delay="300">
+                        <div
+                            class="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-paixao-green">
+                                <i class="ph-fill ph-check-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-gray-900">100% Digital</p>
+                                <p class="text-xs text-gray-500">Sem papelada</p>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <i class="ph-fill ph-check-circle text-paixao-green text-lg"></i>
-                            <span>Agilidade no Sinistro</span>
+                        <div
+                            class="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-paixao-green">
+                                <i class="ph-fill ph-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-gray-900">Cotação Rápida</p>
+                                <p class="text-xs text-gray-500">Em 2 minutos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-sm text-gray-500" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
+                            <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-paixao-green flex items-center justify-center text-white text-xs border-2 border-white font-bold">
+                                +2k</div>
+                        </div>
+                        <p>Clientes já protegidos este mês</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: 2-Step Form -->
+                <div class="relative" data-aos="fade-left" data-aos-duration="1200">
+                    <!-- Decorative Floaters -->
+                    <div
+                        class="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-green-400 to-paixao-green rounded-2xl rotate-12 opacity-20 floating-delayed -z-10">
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -left-8 w-16 h-16 bg-gradient-to-tr from-gray-800 to-black rounded-full opacity-10 floating -z-10">
+                    </div>
+
+                    <div class="glass-card p-8 md:p-10 relative overflow-hidden">
+                        <!-- Progress Line -->
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gray-100">
+                            <div id="form-progress"
+                                class="h-full bg-paixao-green w-1/2 transition-all duration-500 ease-in-out"></div>
+                        </div>
+
+                        <div class="mb-8 text-center">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Simule sua Proteção</h3>
+                            <p class="text-gray-500 text-sm">Passo <span id="step-counter">1</span> de 2</p>
+                        </div>
+
+                        <form id="lead-form" onsubmit="event.preventDefault();">
+                            <!-- Step 1: Contact Info -->
+                            <div id="step-1" class="step-active step-transition space-y-4">
+                                <div class="space-y-1">
+                                    <label class="text-sm font-medium text-gray-700 ml-1">Seu Nome</label>
+                                    <div class="relative">
+                                        <i class="ph ph-user absolute left-3 top-3.5 text-gray-400 text-lg"></i>
+                                        <input type="text" placeholder="Ex: João Silva" class="input-field pl-10"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-sm font-medium text-gray-700 ml-1">Seu E-mail</label>
+                                    <div class="relative">
+                                        <i class="ph ph-envelope absolute left-3 top-3.5 text-gray-400 text-lg"></i>
+                                        <input type="email" placeholder="joao@email.com" class="input-field pl-10"
+                                            required>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="nextStep()"
+                                    class="btn-primary w-full flex items-center justify-center gap-2 mt-4 group">
+                                    Continuar <i
+                                        class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+
+                            <!-- Step 2: Details & Submit -->
+                            <div id="step-2" class="step-hidden step-transition space-y-4">
+                                <div class="space-y-1">
+                                    <label class="text-sm font-medium text-gray-700 ml-1">Telefone / WhatsApp</label>
+                                    <div class="relative">
+                                        <i
+                                            class="ph ph-whatsapp-logo absolute left-3 top-3.5 text-gray-400 text-lg"></i>
+                                        <input type="tel" placeholder="(11) 99999-9999" class="input-field pl-10">
+                                    </div>
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-sm font-medium text-gray-700 ml-1">Interesse Principal</label>
+                                    <div class="relative">
+                                        <i class="ph ph-shield absolute left-3 top-3.5 text-gray-400 text-lg"></i>
+                                        <select class="input-field pl-10 appearance-none bg-white">
+                                            <option>Seguro Auto</option>
+                                            <option>Seguro Residencial</option>
+                                            <option>Seguro de Vida</option>
+                                            <option>Seguro Empresarial</option>
+                                        </select>
+                                        <i class="ph ph-caret-down absolute right-4 top-4 text-gray-400"></i>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3 mt-6">
+                                    <button type="button" onclick="prevStep()"
+                                        class="px-4 py-3 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors">
+                                        <i class="ph-bold ph-arrow-left"></i>
+                                    </button>
+                                    <button type="submit" onclick="finishForm()"
+                                        class="btn-primary flex-1 shadow-green-500/20">
+                                        Ver Cotação Agora
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Success Message (Hidden by default) -->
+                            <div id="form-success" class="hidden text-center py-8 animate-fade-in">
+                                <div
+                                    class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-paixao-green mx-auto mb-4">
+                                    <i class="ph-fill ph-check text-3xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Sulicitação Recebida!</h4>
+                                <p class="text-gray-600">Um de nossos especialistas entrará em contato em instantes.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- Social Proof / Partners (Relocated) -->
+    <section class="py-12 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-xs tracking-widest mb-8 font-semibold">PARCEIROS CONFIÁVEIS</p>
+            <div
+                class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Placeholder Logos -->
+                <div class="text-2xl font-bold font-serif text-gray-400">Seguradora A</div>
+                <div class="text-2xl font-bold font-mono text-gray-400">Protege+</div>
+                <div class="text-2xl font-bold font-sans text-gray-400">SafeLife</div>
+                <div class="text-2xl font-bold text-gray-400 italic">AutoGuard</div>
+                <div class="text-2xl font-bold text-gray-400">TrustInsure</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Erika Paixão Section (Relocated) -->
+    <section id="sobre" class="py-20 bg-white overflow-hidden border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Column -->
+                <div class="relative" data-aos="fade-right">
+                    <div
+                        class="absolute inset-0 bg-paixao-green rounded-[3rem] transform rotate-3 opacity-20 translate-x-4 translate-y-4">
+                    </div>
+                    <div class="relative rounded-[3rem] overflow-hidden shadow-2xl">
+                        <img src="./PHOTO-2024-12-28-13-02-03.jpg" alt="Erika Paixão - Corretora de Seguros"
+                            class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <!-- Experience Badge -->
+                    <div
+                        class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-paixao-green text-white rounded-full flex items-center justify-center text-xl font-bold">
+                                10+
+                            </div>
+                            <div>
+                                <p class="text-gray-900 font-bold text-lg">Anos de Experiência</p>
+                                <p class="text-gray-500 text-sm">Protegendo sonhos</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Visual Content (Abstract/3D) -->
-                <div class="relative hidden lg:block" data-aos="fade-left" data-aos-delay="200">
-                    <!-- Placeholder for abstract illustration -->
-                    <div class="relative w-full aspect-square max-w-lg mx-auto">
-                        <div class="absolute inset-0 bg-green-50 rounded-full filter blur-3xl opacity-50 animate-pulse">
-                        </div>
-                        <!-- Composition of Cards/Icons to simulate 3D -->
-                        <div
-                            class="absolute top-10 left-10 w-48 p-4 bg-white rounded-2xl shadow-xl z-20 transform -rotate-6 border border-gray-100">
-                            <div
-                                class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-2">
-                                <i class="ph-duotone ph-house-line text-2xl"></i>
-                            </div>
-                            <p class="font-bold text-gray-900">Residencial</p>
-                            <p class="text-xs text-gray-500">Proteção total</p>
-                        </div>
+                <!-- Text Column -->
+                <div data-aos="fade-left">
+                    <h2 class="text-sm font-semibold text-paixao-green tracking-wide uppercase mb-2">Conheça sua
+                        Corretora</h2>
+                    <h3 class="text-3xl lg:text-4xl font-bold text-paixao-dark mb-6">Erika Paixão: Mais que seguros,
+                        <span
+                            class="bg-gradient-to-r from-paixao-green to-green-600 bg-clip-text text-transparent">cuidado
+                            humano.</span>
+                    </h3>
 
-                        <div
-                            class="absolute bottom-20 right-10 w-52 p-4 bg-white rounded-2xl shadow-xl z-10 transform rotate-3 border border-gray-100">
-                            <div
-                                class="w-10 h-10 bg-paixao-green/10 rounded-lg flex items-center justify-center text-paixao-green mb-2">
-                                <i class="ph-duotone ph-car text-2xl"></i>
-                            </div>
-                            <p class="font-bold text-gray-900">Automóvel</p>
-                            <p class="text-xs text-gray-500">Assistência 24h</p>
-                        </div>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        "Minha missão não é apenas vender uma apólice, é garantir que, no momento que você mais
+                        precisar, eu serei a primeira pessoa a te dar suporte. A tecnologia agiliza, mas é o fator
+                        humano que acolhe."
+                    </p>
 
-                        <div
-                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-tr from-paixao-green to-emerald-300 rounded-full opacity-10 blur-2xl">
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="ph-fill ph-certificate text-paixao-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Especialista Certificada</h4>
+                                <p class="text-sm text-gray-500">Credenciada pelas maiores seguradoras do Brasil.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="ph-fill ph-heart text-paixao-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Atendimento Empático</h4>
+                                <p class="text-sm text-gray-500">Entendo sua realidade para oferecer o que você
+                                    realmente precisa.</p>
+                            </div>
                         </div>
                     </div>
+
+                    <a href="https://wa.me/5511999999999" target="_blank"
+                        class="btn-primary inline-flex items-center gap-2">
+                        <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+                        Falar com Erika
+                    </a>
                 </div>
             </div>
         </div>
@@ -304,22 +537,85 @@
         </div>
     </section>
 
-    <!-- Social Proof / Partners -->
-    <section class="py-16 bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-500 text-sm mb-8 font-medium">PARCEIROS CONFIÁVEIS</p>
-            <div
-                class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Placeholder Logos -->
-                <div class="text-2xl font-bold font-serif text-gray-400">Seguradora A</div>
-                <div class="text-2xl font-bold font-mono text-gray-400">Protege+</div>
-                <div class="text-2xl font-bold font-sans text-gray-400">SafeLife</div>
-                <div class="text-2xl font-bold text-gray-400 italic">AutoGuard</div>
-                <div class="text-2xl font-bold text-gray-400">TrustInsure</div>
+
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <i class="ph-fill ph-quotes text-6xl text-paixao-green/20 mb-4 inline-block"></i>
+                <h2 class="text-3xl font-bold text-paixao-dark mb-4">O que nossos clientes dizem</h2>
+                <p class="text-gray-600">A confiança é nossa maior conquista. Veja as histórias de quem já está
+                    protegido.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"A agilidade da Paixão Seguros me surpreendeu. Tive um sinistro
+                        com meu carro no domingo à noite e o suporte da Erika foi imediato. Resolveu tudo!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=Ricardo+M&background=28a745&color=fff"
+                                alt="Cliente" class="w-full h-full">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-gray-900">Ricardo Mendes</p>
+                            <p class="text-xs text-gray-500">Seguro Auto</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Contratei o Clayton de vida pensando na minha família. A
+                        explicação foi clara, sem letras miúdas. Me sinto muito mais tranquilo agora."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=Ana+P&background=1a1a1a&color=fff" alt="Cliente"
+                                class="w-full h-full">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-gray-900">Ana Paula</p>
+                            <p class="text-xs text-gray-500">Seguro de Vida</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                            class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"O atendimento humanizado faz toda a diferença. Não sou apenas
+                        um número para eles. Recomendo para todos os meus sócios."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=Carlos+S&background=28a745&color=fff"
+                                alt="Cliente" class="w-full h-full">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-gray-900">Carlos Silva</p>
+                            <p class="text-xs text-gray-500">Seguro Empresarial</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
+    </section>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8" id="contato">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -405,6 +701,69 @@
             once: true,
             offset: 50,
         });
+
+        // Form Handling Logic
+        function nextStep() {
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
+            const progressBar = document.getElementById('form-progress');
+            const stepCounter = document.getElementById('step-counter');
+
+            // Simple validation check (should be more robust in prod)
+            const inputs = step1.querySelectorAll('input');
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!input.value) {
+                    isValid = false;
+                    input.classList.add('border-red-500');
+                } else {
+                    input.classList.remove('border-red-500');
+                }
+            });
+
+            if (!isValid) return;
+
+            step1.classList.remove('step-active');
+            step1.classList.add('step-hidden');
+
+            step2.classList.remove('step-hidden');
+            setTimeout(() => step2.classList.add('step-active'), 50);
+
+            progressBar.classList.remove('w-1/2');
+            progressBar.classList.add('w-full');
+            stepCounter.innerText = "2";
+        }
+
+        function prevStep() {
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
+            const progressBar = document.getElementById('form-progress');
+            const stepCounter = document.getElementById('step-counter');
+
+            step2.classList.remove('step-active');
+            step2.classList.add('step-hidden');
+
+            step1.classList.remove('step-hidden');
+            setTimeout(() => step1.classList.add('step-active'), 50);
+
+            progressBar.classList.remove('w-full');
+            progressBar.classList.add('w-1/2');
+            stepCounter.innerText = "1";
+        }
+
+        function finishForm() {
+            const step2 = document.getElementById('step-2');
+            const success = document.getElementById('form-success');
+            const header = document.querySelector('.glass-card .mb-8'); // Header text
+
+            step2.classList.remove('step-active');
+            step2.classList.add('step-hidden');
+
+            // Hide header
+            if (header) header.style.display = 'none';
+
+            success.classList.remove('hidden');
+        }
     </script>
 </body>
 
