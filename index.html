@@ -126,19 +126,45 @@
                 <!-- CTA Button -->
                 <div class="hidden md:flex">
                     <a href="#contato" class="btn-primary">
-                        Cotação Rápida
+                        Fale Conosco
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-paixao-dark hover:text-paixao-green focus:outline-none">
-                        <i class="ph ph-list text-2xl"></i>
+                <div class="md:hidden flex items-center relative z-[60]">
+                    <button id="mobile-menu-btn" onclick="toggleMenu()"
+                        class="text-paixao-dark hover:text-paixao-green focus:outline-none p-2 transition-colors">
+                        <i class="ph ph-list text-3xl transition-transform duration-300" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay (Outside Header) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white/98 backdrop-blur-xl z-[59] transform translate-x-full transition-all duration-300 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none">
+
+        <!-- Close Button -->
+        <button onclick="toggleMenu()"
+            class="absolute top-8 right-8 w-12 h-12 rounded-full bg-gray-100 hover:bg-paixao-green hover:text-white text-gray-800 flex items-center justify-center transition-all duration-300 hover:rotate-90">
+            <i class="ph-bold ph-x text-2xl"></i>
+        </button>
+
+        <a href="#inicio" onclick="toggleMenu()"
+            class="menu-link text-2xl font-bold text-gray-800 hover:text-paixao-green transition-all duration-300 opacity-0 translate-y-4">Início</a>
+        <a href="#servicos" onclick="toggleMenu()"
+            class="menu-link text-2xl font-bold text-gray-800 hover:text-paixao-green transition-all duration-300 opacity-0 translate-y-4">Seguros</a>
+        <a href="#diferenciais" onclick="toggleMenu()"
+            class="menu-link text-2xl font-bold text-gray-800 hover:text-paixao-green transition-all duration-300 opacity-0 translate-y-4">Sobre</a>
+        <a href="#contato" onclick="toggleMenu()"
+            class="menu-link text-2xl font-bold text-gray-800 hover:text-paixao-green transition-all duration-300 opacity-0 translate-y-4">Contato</a>
+
+        <a href="#contato" onclick="toggleMenu()"
+            class="menu-link btn-primary mt-4 px-8 py-3 text-lg opacity-0 translate-y-4">
+            Fale Conosco
+        </a>
+    </div>
 
     <!-- Hero Section -->
     <!-- Hero Section (Premium Light Theme) -->
@@ -521,13 +547,7 @@
                         </div>
                     </div>
 
-                    <a href="https://wa.me/5511999999999" target="_blank"
-                        class="btn-primary inline-flex items-center gap-3 pl-8 pr-6 shadow-xl shadow-green-500/20 hover:-translate-y-1 transition-transform">
-                        Falar diretamente com Erika
-                        <div class="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center">
-                            <i class="ph-bold ph-whatsapp-logo text-white"></i>
-                        </div>
-                    </a>
+                    <!-- Button Removed as per request -->
                 </div>
             </div>
         </div>
@@ -871,8 +891,9 @@
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/5511999999999" target="_blank"
-        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-transform hover:scale-110 animate-bounce cursor-pointer"
+    <!-- Mobile-Only WhatsApp Button -->
+    <a href="https://wa.me/5531997465403" target="_blank"
+        class="md:hidden fixed bottom-6 right-6 z-50 bg-green-500 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:bg-green-600 transition-all duration-300 hover:scale-110 animate-bounce"
         title="Fale conosco no WhatsApp">
         <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
     </a>
@@ -927,6 +948,46 @@
                 alert('Ocorreu um erro ao enviar. Por favor, tente novamente.');
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
+            }
+        }
+
+        // Mobile Menu Logic
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const body = document.body;
+            const menuLinks = menu.querySelectorAll('.menu-link');
+
+            // Toggle classes
+            const isHidden = menu.classList.contains('translate-x-full');
+
+            if (isHidden) {
+                // Open
+                menu.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+                body.style.overflow = 'hidden'; // Prevent scrolling
+
+                // Staggered animation for links
+                menuLinks.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.classList.remove('opacity-0', 'translate-y-4');
+                    }, 100 + (index * 50));
+                });
+            } else {
+                // Close
+                // Reset link animations
+                menuLinks.forEach(link => {
+                    link.classList.add('opacity-0', 'translate-y-4');
+                });
+
+                setTimeout(() => {
+                    menu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+                }, 200);
+
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+                body.style.overflow = ''; // Restore scrolling
             }
         }
     </script>
