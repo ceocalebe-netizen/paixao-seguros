@@ -26,6 +26,15 @@
                     },
                     boxShadow: {
                         'glass': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    },
+                    animation: {
+                        'scroll': 'scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
                     }
                 }
             }
@@ -132,17 +141,24 @@
     </header>
 
     <!-- Hero Section -->
-    <!-- Hero Section -->
-    <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gray-50">
-        <!-- Animated Background Elements -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+    <!-- Hero Section (Cyber-Physical Upgrade) -->
+    <section id="inicio" class="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#0F172A]">
+        <!-- Dynamic Background -->
+        <div class="absolute inset-0 z-0">
+            <!-- Animated Grid -->
             <div
-                class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-green-100 rounded-full blur-[100px] opacity-60 animate-pulse">
+                class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay">
+            </div>
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: linear-gradient(#28a745 1px, transparent 1px), linear-gradient(90deg, #28a745 1px, transparent 1px); background-size: 50px 50px;">
+            </div>
+
+            <!-- Glowing Orbs -->
+            <div
+                class="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-paixao-green rounded-full blur-[120px] opacity-20 animate-pulse">
             </div>
             <div
-                class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[60%] bg-green-50 rounded-full blur-[100px] opacity-60">
-            </div>
-            <div class="absolute top-[20%] right-[10%] w-24 h-24 bg-paixao-green/10 rounded-full blur-xl floating">
+                class="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-blue-600 rounded-full blur-[140px] opacity-20 animate-pulse delay-700">
             </div>
         </div>
 
@@ -151,141 +167,173 @@
 
                 <!-- Left Column: Content -->
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-sm font-medium text-paixao-green mb-6 shadow-sm"
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-sm font-medium text-paixao-green mb-8 shadow-lg shadow-green-900/20"
                         data-aos="fade-up" data-aos-delay="100">
-                        <span class="w-2 h-2 rounded-full bg-paixao-green animate-ping"></span>
+                        <span class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
                         Inovação em Seguros
                     </div>
 
-                    <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900 tracking-tight">
+                    <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-8 text-white tracking-tight">
                         O futuro da sua <br />
                         <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-paixao-green to-green-700">segurança</span>
-                        começa aqui.
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-paixao-green to-emerald-400 drop-shadow-[0_0_15px_rgba(40,167,69,0.5)]">segurança</span>
+                        começa agora.
                     </h1>
 
-                    <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed" data-aos="fade-up"
+                    <p class="text-xl text-gray-400 mb-10 max-w-lg leading-relaxed font-light" data-aos="fade-up"
                         data-aos-delay="200">
-                        Cote seu seguro em segundos com nossa tecnologia de ponta. Proteção personalizada, atendimento
-                        24h e burocracia zero.
+                        Esqueça a burocracia. Cote seu seguro em <b class="text-white">segundos</b> com nossa
+                        inteligência artificial e garanta proteção premium.
                     </p>
 
-                    <div class="flex flex-wrap gap-4 mb-10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex flex-wrap gap-5 mb-12" data-aos="fade-up" data-aos-delay="300">
                         <div
-                            class="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
+                            class="flex items-center gap-4 bg-white/5 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors cursor-default">
                             <div
-                                class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-paixao-green">
-                                <i class="ph-fill ph-check-circle text-xl"></i>
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-700 flex items-center justify-center text-white shadow-lg shadow-green-900/50">
+                                <i class="ph-fill ph-check-circle text-2xl"></i>
                             </div>
                             <div>
-                                <p class="font-bold text-sm text-gray-900">100% Digital</p>
-                                <p class="text-xs text-gray-500">Sem papelada</p>
+                                <p class="font-bold text-base text-white">100% Digital</p>
+                                <p class="text-xs text-gray-400">Zero Papelada</p>
                             </div>
                         </div>
                         <div
-                            class="flex items-center gap-3 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-100">
+                            class="flex items-center gap-4 bg-white/5 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors cursor-default">
                             <div
-                                class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-paixao-green">
-                                <i class="ph-fill ph-clock text-xl"></i>
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-700 flex items-center justify-center text-white shadow-lg shadow-blue-900/50">
+                                <i class="ph-fill ph-lightning text-2xl"></i>
                             </div>
                             <div>
-                                <p class="font-bold text-sm text-gray-900">Cotação Rápida</p>
-                                <p class="text-xs text-gray-500">Em 2 minutos</p>
+                                <p class="font-bold text-base text-white">Cotação Flash</p>
+                                <p class="text-xs text-gray-400">Em 2 minutos</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex items-center gap-4 text-sm text-gray-500" data-aos="fade-up" data-aos-delay="400">
-                        <div class="flex -space-x-2">
-                            <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
-                            <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
+                    <div class="flex items-center gap-4 text-sm text-gray-400 border-l-2 border-white/10 pl-4"
+                        data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex -space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 border-2 border-[#0F172A] relative z-0">
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-gray-400 border-2 border-[#0F172A] relative z-10">
+                            </div>
                             <div
-                                class="w-8 h-8 rounded-full bg-paixao-green flex items-center justify-center text-white text-xs border-2 border-white font-bold">
+                                class="w-10 h-10 rounded-full bg-paixao-green flex items-center justify-center text-white text-xs border-2 border-[#0F172A] font-bold relative z-20">
                                 +2k</div>
                         </div>
-                        <p>Clientes já protegidos este mês</p>
+                        <p><span class="text-white font-bold">2.000+</span> Clientes protegidos este mês</p>
                     </div>
                 </div>
 
-                <!-- Right Column: 2-Step Form -->
-                <div class="relative" data-aos="fade-left" data-aos-duration="1200">
-                    <!-- Decorative Floaters -->
+                <!-- Right Column: 2-Step Form (Glassmorphism Dark Mode) -->
+                <div class="relative perspective-1000" data-aos="fade-left" data-aos-duration="1200">
+                    <!-- 3D Decorative Elements -->
                     <div
-                        class="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-green-400 to-paixao-green rounded-2xl rotate-12 opacity-20 floating-delayed -z-10">
+                        class="absolute -top-16 -right-16 w-32 h-32 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl rotate-12 opacity-20 blur-2xl floating-delayed -z-10">
                     </div>
                     <div
-                        class="absolute -bottom-8 -left-8 w-16 h-16 bg-gradient-to-tr from-gray-800 to-black rounded-full opacity-10 floating -z-10">
+                        class="absolute -bottom-10 -left-10 w-24 h-24 bg-gradient-to-tr from-blue-500 to-purple-600 rounded-full opacity-20 blur-xl floating -z-10">
                     </div>
 
-                    <div class="glass-card p-8 md:p-10 relative overflow-hidden">
+                    <!-- The Form Card -->
+                    <div
+                        class="glass-card bg-white/95 backdrop-blur-xl p-8 md:p-10 relative overflow-hidden shadow-2xl shadow-green-900/20 border-0 rounded-3xl transform transition-transform hover:scale-[1.01] duration-500">
+
                         <!-- Progress Line -->
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gray-100">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gray-100">
                             <div id="form-progress"
-                                class="h-full bg-paixao-green w-1/2 transition-all duration-500 ease-in-out"></div>
+                                class="h-full bg-gradient-to-r from-paixao-green to-emerald-500 w-1/2 transition-all duration-500 ease-in-out">
+                            </div>
                         </div>
 
                         <div class="mb-8 text-center">
                             <h3 class="text-2xl font-bold text-gray-900 mb-2">Simule sua Proteção</h3>
-                            <p class="text-gray-500 text-sm">Passo <span id="step-counter">1</span> de 2</p>
+                            <p class="text-gray-500 text-sm">Passo <span id="step-counter"
+                                    class="font-bold text-paixao-green">1</span> de 2</p>
                         </div>
 
                         <form id="lead-form" onsubmit="event.preventDefault();">
                             <!-- Step 1: Contact Info -->
-                            <div id="step-1" class="step-active step-transition space-y-4">
-                                <div class="space-y-1">
-                                    <label class="text-sm font-medium text-gray-700 ml-1">Seu Nome</label>
-                                    <div class="relative">
-                                        <i class="ph ph-user absolute left-3 top-3.5 text-gray-400 text-lg"></i>
-                                        <input type="text" placeholder="Ex: João Silva" class="input-field pl-10"
+                            <div id="step-1" class="step-active step-transition space-y-5">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-gray-700 ml-1">Seu Nome</label>
+                                    <div class="relative group">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i
+                                                class="ph ph-user text-gray-400 text-lg group-focus-within:text-paixao-green transition-colors"></i>
+                                        </div>
+                                        <input type="text" placeholder="Ex: João Silva"
+                                            class="input-field pl-10 border-gray-200 bg-gray-50 focus:bg-white transition-all shadow-sm"
                                             required>
                                     </div>
                                 </div>
-                                <div class="space-y-1">
-                                    <label class="text-sm font-medium text-gray-700 ml-1">Seu E-mail</label>
-                                    <div class="relative">
-                                        <i class="ph ph-envelope absolute left-3 top-3.5 text-gray-400 text-lg"></i>
-                                        <input type="email" placeholder="joao@email.com" class="input-field pl-10"
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-gray-700 ml-1">Seu E-mail</label>
+                                    <div class="relative group">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i
+                                                class="ph ph-envelope text-gray-400 text-lg group-focus-within:text-paixao-green transition-colors"></i>
+                                        </div>
+                                        <input type="email" placeholder="joao@email.com"
+                                            class="input-field pl-10 border-gray-200 bg-gray-50 focus:bg-white transition-all shadow-sm"
                                             required>
                                     </div>
                                 </div>
                                 <button type="button" onclick="nextStep()"
-                                    class="btn-primary w-full flex items-center justify-center gap-2 mt-4 group">
+                                    class="w-full py-4 bg-gradient-to-r from-paixao-green to-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 group mt-2">
                                     Continuar <i
                                         class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
                                 </button>
                             </div>
 
                             <!-- Step 2: Details & Submit -->
-                            <div id="step-2" class="step-hidden step-transition space-y-4">
-                                <div class="space-y-1">
-                                    <label class="text-sm font-medium text-gray-700 ml-1">Telefone / WhatsApp</label>
-                                    <div class="relative">
-                                        <i
-                                            class="ph ph-whatsapp-logo absolute left-3 top-3.5 text-gray-400 text-lg"></i>
-                                        <input type="tel" placeholder="(11) 99999-9999" class="input-field pl-10">
+                            <div id="step-2" class="step-hidden step-transition space-y-5">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-gray-700 ml-1">Telefone / WhatsApp</label>
+                                    <div class="relative group">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i
+                                                class="ph ph-whatsapp-logo text-gray-400 text-lg group-focus-within:text-paixao-green transition-colors"></i>
+                                        </div>
+                                        <input type="tel" placeholder="(11) 99999-9999"
+                                            class="input-field pl-10 border-gray-200 bg-gray-50 focus:bg-white transition-all shadow-sm">
                                     </div>
                                 </div>
-                                <div class="space-y-1">
-                                    <label class="text-sm font-medium text-gray-700 ml-1">Interesse Principal</label>
-                                    <div class="relative">
-                                        <i class="ph ph-shield absolute left-3 top-3.5 text-gray-400 text-lg"></i>
-                                        <select class="input-field pl-10 appearance-none bg-white">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-gray-700 ml-1">Interesse Principal</label>
+                                    <div class="relative group">
+                                        <div
+                                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i
+                                                class="ph ph-shield text-gray-400 text-lg group-focus-within:text-paixao-green transition-colors"></i>
+                                        </div>
+                                        <select
+                                            class="input-field pl-10 appearance-none bg-gray-50 focus:bg-white border-gray-200 shadow-sm cursor-pointer">
                                             <option>Seguro Auto</option>
                                             <option>Seguro Residencial</option>
                                             <option>Seguro de Vida</option>
                                             <option>Seguro Empresarial</option>
                                         </select>
-                                        <i class="ph ph-caret-down absolute right-4 top-4 text-gray-400"></i>
+                                        <i
+                                            class="ph ph-caret-down absolute right-4 top-4 text-gray-400 pointer-events-none"></i>
                                     </div>
                                 </div>
 
                                 <div class="flex gap-3 mt-6">
                                     <button type="button" onclick="prevStep()"
-                                        class="px-4 py-3 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors">
+                                        class="px-5 py-3 rounded-xl border border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">
                                         <i class="ph-bold ph-arrow-left"></i>
                                     </button>
                                     <button type="submit" onclick="finishForm()"
-                                        class="btn-primary flex-1 shadow-green-500/20">
+                                        class="flex-1 py-3 bg-gradient-to-r from-paixao-green to-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
                                         Ver Cotação Agora
                                     </button>
                                 </div>
@@ -294,11 +342,11 @@
                             <!-- Success Message (Hidden by default) -->
                             <div id="form-success" class="hidden text-center py-8 animate-fade-in">
                                 <div
-                                    class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-paixao-green mx-auto mb-4">
-                                    <i class="ph-fill ph-check text-3xl"></i>
+                                    class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-paixao-green mx-auto mb-6 shadow-inner animate-bounce-slow">
+                                    <i class="ph-fill ph-check text-4xl"></i>
                                 </div>
-                                <h4 class="text-xl font-bold text-gray-900 mb-2">Sulicitação Recebida!</h4>
-                                <p class="text-gray-600">Um de nossos especialistas entrará em contato em instantes.</p>
+                                <h4 class="text-2xl font-bold text-gray-900 mb-2">Solicitação Recebida!</h4>
+                                <p class="text-gray-500">Um de nossos especialistas entrará em contato em instantes.</p>
                             </div>
                         </form>
                     </div>
@@ -310,95 +358,201 @@
 
     </section>
 
-    <!-- Social Proof / Partners (Relocated) -->
-    <section class="py-12 bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-400 text-xs tracking-widest mb-8 font-semibold">PARCEIROS CONFIÁVEIS</p>
-            <div
-                class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Placeholder Logos -->
-                <div class="text-2xl font-bold font-serif text-gray-400">Seguradora A</div>
-                <div class="text-2xl font-bold font-mono text-gray-400">Protege+</div>
-                <div class="text-2xl font-bold font-sans text-gray-400">SafeLife</div>
-                <div class="text-2xl font-bold text-gray-400 italic">AutoGuard</div>
-                <div class="text-2xl font-bold text-gray-400">TrustInsure</div>
+    <!-- Social Proof / Partners (Dynamic Marquee) -->
+    <section class="py-10 bg-white border-b border-gray-100 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 mb-6 text-center">
+            <p class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">Seguradoras Parceiras</p>
+        </div>
+
+        <!-- Gradient Masks -->
+        <div
+            class="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none">
+        </div>
+        <div
+            class="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none">
+        </div>
+
+        <div
+            class="flex animate-scroll w-max gap-16 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500 hover:pause cursor-pointer">
+            <!-- Original List -->
+            <div class="flex items-center gap-16">
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-shield-check text-3xl group-hover:text-blue-600 transition-colors"></i>
+                    <span class="text-2xl font-bold font-serif text-gray-800 group-hover:text-blue-900">Porto
+                        Seguro</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-umbrella text-3xl group-hover:text-red-600 transition-colors"></i>
+                    <span class="text-2xl font-bold font-sans text-gray-800 group-hover:text-red-900">Bradesco</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-heartbeat text-3xl group-hover:text-yellow-500 transition-colors"></i>
+                    <span
+                        class="text-2xl font-bold font-mono text-gray-800 group-hover:text-yellow-700">SulAmérica</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-car-profile text-3xl group-hover:text-blue-400 transition-colors"></i>
+                    <span class="text-2xl font-bold font-sans text-gray-800 group-hover:text-blue-600">Azul
+                        Seguros</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-house-line text-3xl group-hover:text-green-600 transition-colors"></i>
+                    <span class="text-2xl font-bold font-serif text-gray-800 group-hover:text-green-800">Tokio
+                        Marine</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-airplane-tilt text-3xl group-hover:text-cyan-500 transition-colors"></i>
+                    <span class="text-2xl font-bold font-sans text-gray-800 group-hover:text-cyan-700">Allianz</span>
+                </div>
+            </div>
+
+            <!-- Duplicate List for Infinite Loop -->
+            <div class="flex items-center gap-16" aria-hidden="true">
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-shield-check text-3xl group-hover:text-blue-600 transition-colors"></i>
+                    <span class="text-2xl font-bold font-serif text-gray-800 group-hover:text-blue-900">Porto
+                        Seguro</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-umbrella text-3xl group-hover:text-red-600 transition-colors"></i>
+                    <span class="text-2xl font-bold font-sans text-gray-800 group-hover:text-red-900">Bradesco</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-heartbeat text-3xl group-hover:text-yellow-500 transition-colors"></i>
+                    <span
+                        class="text-2xl font-bold font-mono text-gray-800 group-hover:text-yellow-700">SulAmérica</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-car-profile text-3xl group-hover:text-blue-400 transition-colors"></i>
+                    <span class="text-2xl font-bold font-sans text-gray-800 group-hover:text-blue-600">Azul
+                        Seguros</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-house-line text-3xl group-hover:text-green-600 transition-colors"></i>
+                    <span class="text-2xl font-bold font-serif text-gray-800 group-hover:text-green-800">Tokio
+                        Marine</span>
+                </div>
+                <div class="flex items-center gap-2 group">
+                    <i class="ph-fill ph-airplane-tilt text-3xl group-hover:text-cyan-500 transition-colors"></i>
+                    <span class="text-2xl font-bold font-sans text-gray-800 group-hover:text-cyan-700">Allianz</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Erika Paixão Section (Relocated) -->
-    <section id="sobre" class="py-20 bg-white overflow-hidden border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Image Column -->
-                <div class="relative" data-aos="fade-right">
-                    <div
-                        class="absolute inset-0 bg-paixao-green rounded-[3rem] transform rotate-3 opacity-20 translate-x-4 translate-y-4">
-                    </div>
-                    <div class="relative rounded-[3rem] overflow-hidden shadow-2xl">
-                        <img src="./PHOTO-2024-12-28-13-02-03.jpg" alt="Erika Paixão - Corretora de Seguros"
-                            class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <!-- Experience Badge -->
-                    <div
-                        class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 bg-paixao-green text-white rounded-full flex items-center justify-center text-xl font-bold">
-                                10+
-                            </div>
-                            <div>
-                                <p class="text-gray-900 font-bold text-lg">Anos de Experiência</p>
-                                <p class="text-gray-500 text-sm">Protegendo sonhos</p>
+    <!-- About Erika Paixão Section (Redesigned) -->
+    <section id="sobre" class="py-24 bg-white relative overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-gray-50 to-transparent -z-10"></div>
+        <div
+            class="absolute right-0 top-20 w-1/2 h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none">
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+
+                <!-- Image Column (Dynamic & Contained) -->
+                <div class="w-full lg:w-5/12 relative" data-aos="fade-right">
+                    <div class="relative z-10">
+                        <!-- Main Image Frame -->
+                        <div
+                            class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white transform rotate-[-2deg] hover:rotate-0 transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
+                            <img src="./PHOTO-2024-12-28-13-02-03.jpg" alt="Erika Paixão"
+                                class="w-full h-auto object-cover max-h-[500px]">
+
+                            <!-- Name Overlay -->
+                            <div class="absolute bottom-6 left-6 z-20 text-white">
+                                <p class="text-sm font-medium tracking-wider uppercase opacity-90">CEO & Founder</p>
+                                <p class="text-2xl font-bold">Erika Paixão</p>
                             </div>
                         </div>
+
+                        <!-- Floating Stat Card 1 -->
+                        <div
+                            class="absolute -top-8 -right-8 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 animate-bounce-slow hidden md:block z-20">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-paixao-green">
+                                    <i class="ph-fill ph-certificate text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 text-sm">Certificada</p>
+                                    <p class="text-xs text-gray-500">SUSEP Oficial</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Stat Card 2 (Bottom Left) -->
+                        <div
+                            class="absolute -bottom-8 -left-4 bg-paixao-dark p-5 rounded-2xl shadow-2xl shadow-gray-400/50 hidden md:block z-20">
+                            <div class="text-center">
+                                <p class="text-3xl font-bold text-paixao-green">10+</p>
+                                <p class="text-white text-xs font-medium uppercase tracking-wide mt-1">Anos
+                                    de<br>Mercado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Back Decoration -->
+                    <div
+                        class="absolute inset-0 bg-paixao-green/10 rounded-[2.5rem] transform rotate-[3deg] scale-105 -z-10 translate-x-2 translate-y-2">
                     </div>
                 </div>
 
                 <!-- Text Column -->
-                <div data-aos="fade-left">
-                    <h2 class="text-sm font-semibold text-paixao-green tracking-wide uppercase mb-2">Conheça sua
-                        Corretora</h2>
-                    <h3 class="text-3xl lg:text-4xl font-bold text-paixao-dark mb-6">Erika Paixão: Mais que seguros,
-                        <span
-                            class="bg-gradient-to-r from-paixao-green to-green-600 bg-clip-text text-transparent">cuidado
-                            humano.</span>
-                    </h3>
+                <div class="w-full lg:w-7/12" data-aos="fade-left">
+                    <div
+                        class="inline-block px-3 py-1 bg-green-50 text-paixao-green rounded-full text-xs font-bold tracking-widest uppercase mb-6">
+                        Liderança Humana
+                    </div>
 
-                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                        "Minha missão não é apenas vender uma apólice, é garantir que, no momento que você mais
-                        precisar, eu serei a primeira pessoa a te dar suporte. A tecnologia agiliza, mas é o fator
-                        humano que acolhe."
-                    </p>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                        Mais que seguros, <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-paixao-green to-green-700">nós
+                            entregamos promessas.</span>
+                    </h2>
 
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-start gap-4">
+                    <div class="relative pl-8 border-l-4 border-paixao-green mb-8">
+                        <i class="ph-fill ph-quotes text-4xl text-gray-200 absolute -top-4 left-4 -z-10"></i>
+                        <p class="text-xl text-gray-600 italic font-medium leading-relaxed">
+                            "A tecnologia agiliza processos, mas é a empatia que constrói confiança. Quando você fecha
+                            um seguro comigo, não está levando um papel, está levando o meu compromisso pessoal com sua
+                            tranquilidade."
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-6 mb-10">
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-xl bg-gray-50 hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-gray-100 cursor-default">
                             <div
-                                class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="ph-fill ph-certificate text-paixao-green"></i>
+                                class="w-10 h-10 bg-paixao-green text-white rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg shadow-green-200">
+                                <i class="ph-bold ph-hand-heart text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Especialista Certificada</h4>
-                                <p class="text-sm text-gray-500">Credenciada pelas maiores seguradoras do Brasil.</p>
+                                <h4 class="font-bold text-gray-900">Empatia Real</h4>
+                                <p class="text-sm text-gray-500 mt-1">Entendemos sua história antes de cotar.</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-xl bg-gray-50 hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-gray-100 cursor-default">
                             <div
-                                class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="ph-fill ph-heart text-paixao-green"></i>
+                                class="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                                <i class="ph-bold ph-shield-check text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900">Atendimento Empático</h4>
-                                <p class="text-sm text-gray-500">Entendo sua realidade para oferecer o que você
-                                    realmente precisa.</p>
+                                <h4 class="font-bold text-gray-900">Autoridade</h4>
+                                <p class="text-sm text-gray-500 mt-1">Especialista nas maiores seguradoras.</p>
                             </div>
                         </div>
                     </div>
 
                     <a href="https://wa.me/5511999999999" target="_blank"
-                        class="btn-primary inline-flex items-center gap-2">
-                        <i class="ph-fill ph-whatsapp-logo text-xl"></i>
-                        Falar com Erika
+                        class="btn-primary inline-flex items-center gap-3 pl-8 pr-6 shadow-xl shadow-green-500/20 hover:-translate-y-1 transition-transform">
+                        Falar diretamente com Erika
+                        <div class="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="ph-bold ph-whatsapp-logo text-white"></i>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -477,59 +631,121 @@
     </section>
 
     <!-- Differentiators Section -->
-    <section id="diferenciais" class="py-20 relative overflow-hidden">
-        <!-- Background Abstract -->
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-gray-50 -z-10 skew-x-12 transform origin-top-right"></div>
+    <section id="diferenciais" class="py-24 relative overflow-hidden bg-gray-900">
+        <!-- Abstract Background -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-paixao-green rounded-full blur-[120px] opacity-10 animate-pulse">
+            </div>
+            <div
+                class="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-green-900 rounded-full blur-[100px] opacity-20">
+            </div>
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5"></div>
+        </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+                <!-- Left Content -->
                 <div data-aos="fade-right">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div
-                            class="bg-paixao-green text-white p-6 rounded-2xl rounded-br-[4rem] h-48 flex flex-col justify-end">
-                            <i class="ph-fill ph-clock-counter-clockwise text-4xl mb-4"></i>
-                            <p class="font-bold text-lg">Atendimento 24h</p>
-                        </div>
-                        <div class="bg-gray-100 p-6 rounded-2xl h-48 flex flex-col justify-end">
-                            <i class="ph-fill ph-lightning text-4xl mb-4 text-paixao-dark"></i>
-                            <p class="font-bold text-lg text-paixao-dark">Sinistro Ágil</p>
-                        </div>
-                        <div class="bg-gray-100 p-6 rounded-2xl rounded-tl-[4rem] h-48 flex flex-col justify-end">
-                            <i class="ph-fill ph-shield-check text-4xl mb-4 text-paixao-dark"></i>
-                            <p class="font-bold text-lg text-paixao-dark">Confiabilidade</p>
-                        </div>
-                        <div class="bg-paixao-dark text-white p-6 rounded-2xl h-48 flex flex-col justify-end">
-                            <i class="ph-fill ph-users text-4xl mb-4"></i>
-                            <p class="font-bold text-lg">Especialistas</p>
-                        </div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-paixao-green mb-8">
+                        <i class="ph-fill ph-star text-yellow-400"></i>
+                        Por que somos diferentes
                     </div>
-                </div>
-
-                <div data-aos="fade-left">
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-paixao-dark">Por que escolher a Paixão Seguros?
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+                        Segurança reinventada <br class="hidden lg:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-paixao-green to-green-300">para
+                            o mundo moderno.</span>
                     </h2>
-                    <p class="text-gray-600 mb-6 text-lg">
-                        Não vendemos apenas seguros, entregamos tranquilidade. Nossa equipe utiliza tecnologia para
-                        desburocratizar processos, garantindo que você tenha o suporte necessário no momento exato.
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        Esqueça a burocracia das seguradoras tradicionais. Unimos consultoria high-end com tecnologia de
+                        ponta para entregar não apenas apólices, mas paz de espírito real.
                     </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="ph-fill ph-check-circle text-paixao-green text-xl mt-1"></i>
-                            <p class="text-gray-700">Cobertura completa personalizada para o seu perfil.</p>
+
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-paixao-green/20 group-hover:border-paixao-green transition-all duration-300">
+                                <i class="ph-duotone ph-shield-check text-2xl text-paixao-green"></i>
+                            </div>
+                            <div>
+                                <h4
+                                    class="text-white font-bold text-lg group-hover:text-paixao-green transition-colors">
+                                    Cobertura Premium</h4>
+                                <p class="text-gray-400 text-sm">Proteção personalizada e auditada para seu perfil.</p>
+                            </div>
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ph-fill ph-check-circle text-paixao-green text-xl mt-1"></i>
-                            <p class="text-gray-700">Equipe de suporte dedicada e pronta para ajudar.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ph-fill ph-check-circle text-paixao-green text-xl mt-1"></i>
-                            <p class="text-gray-700">Parceria com as maiores seguradoras do mercado.</p>
+                        <li class="flex items-start gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-paixao-green/20 group-hover:border-paixao-green transition-all duration-300">
+                                <i class="ph-duotone ph-rocket text-2xl text-paixao-green"></i>
+                            </div>
+                            <div>
+                                <h4
+                                    class="text-white font-bold text-lg group-hover:text-paixao-green transition-colors">
+                                    Atendimento VIP</h4>
+                                <p class="text-gray-400 text-sm">Resolução ágil com equipe concierge dedicada.</p>
+                            </div>
                         </li>
                     </ul>
-                    <div class="mt-8">
-                        <a href="#contato" class="btn-primary">Fale com um consultor</a>
+
+                    <div class="mt-10">
+                        <a href="#contato" class="btn-primary border border-transparent hover:border-white/20">
+                            Agendar Consultoria Gratuita
+                        </a>
                     </div>
                 </div>
+
+                <!-- Right Visuals (Modern Grid) -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Card 1 -->
+                        <div
+                            class="glass-card bg-white/5 border-white/10 p-6 rounded-3xl hover:-translate-y-2 transition-transform duration-500 group">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-green-400 to-paixao-green flex items-center justify-center mb-4 shadow-lg shadow-green-900/50">
+                                <i class="ph-fill ph-clock text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-white font-bold text-xl mb-2">24 Horas</h3>
+                            <p class="text-gray-400 text-sm">Suporte humano a qualquer momento do dia ou da noite.</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="glass-card bg-white/5 border-white/10 p-6 rounded-3xl mt-12 hover:-translate-y-2 transition-transform duration-500 group">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-4 shadow-lg shadow-blue-900/50">
+                                <i class="ph-fill ph-lightning text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-white font-bold text-xl mb-2">100% Online</h3>
+                            <p class="text-gray-400 text-sm">Resolva tudo pelo celular, sem pilhas de papel.</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            class="glass-card bg-white/5 border-white/10 p-6 rounded-3xl hover:-translate-y-2 transition-transform duration-500 group">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4 shadow-lg shadow-pink-900/50">
+                                <i class="ph-fill ph-heart text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-white font-bold text-xl mb-2">Humanizado</h3>
+                            <p class="text-gray-400 text-sm">Não somos robôs. Entendemos sua necessidade real.</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div
+                            class="glass-card bg-white/5 border-white/10 p-6 rounded-3xl mt-12 hover:-translate-y-2 transition-transform duration-500 group">
+                            <div
+                                class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center mb-4 shadow-lg shadow-orange-900/50">
+                                <i class="ph-fill ph-shield-star text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-white font-bold text-xl mb-2">Confiança</h3>
+                            <p class="text-gray-400 text-sm">Parceria sólida com as maiores seguradoras.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
